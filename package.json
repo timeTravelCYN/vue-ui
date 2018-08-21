@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/timeTravelCYN/vue-ui/issues"
   },
-  "homepage": "https://github.com/timeTravelCYN/vue-ui#readme"
+  "homepage": "https://github.com/timeTravelCYN/vue-ui#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
