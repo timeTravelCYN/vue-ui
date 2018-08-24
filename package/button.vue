@@ -1,11 +1,17 @@
 <template>
-  <button class="g-button">按钮</button>
+  <button class="g-button">
+    <svg v-if="icon" class="icon">
+      <use :xlink:href="`#i-${icon}`"></use>
+    </svg>
+    <slot></slot>
+  </button>
 </template>
 
 <script>
-export default {
-  name: 'g-button'
-}
+  export default {
+    name: 'g-button',
+    props: ['icon', 'iconPosition']
+  }
 </script>
 
 <style scoped lang="scss">
