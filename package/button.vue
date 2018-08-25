@@ -1,9 +1,11 @@
 <template>
-  <button class="g-button">
+  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
     <svg v-if="icon" class="icon">
       <use :xlink:href="`#i-${icon}`"></use>
     </svg>
-    <slot></slot>
+    <div class="content">
+      <slot></slot>
+    </div>
   </button>
 </template>
 
@@ -16,6 +18,10 @@
 
 <style scoped lang="scss">
   .g-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
     font-size: var(--font-size);
     height: var(--button-height);
     padding: 0 1em;
@@ -32,6 +38,22 @@
 
     &:focus {
       outline: none;
+    }
+    > .icon {
+      margin-right: .3em;
+      order: 1;
+    }
+    > .content {
+      order: 2;
+    }
+    &.icon-right {
+      > .icon {
+        margin: 0 0 0 .3em;
+        order: 2
+      }
+      > .content {
+        order: 1;
+      }
     }
   }
 </style>
