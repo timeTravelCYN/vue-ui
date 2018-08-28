@@ -4,7 +4,8 @@
   "description": "这是一个 ui 框架",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parcel": "./node_modules/.bin/parcel index.html --no-cache"
   },
   "repository": {
     "type": "git",
