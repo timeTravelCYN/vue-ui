@@ -6,7 +6,15 @@
 
 <script>
   export default {
-    name: 'button-group'
+    name: 'button-group',
+    mounted () {
+      for (let node of this.$el.children) {
+        let name = node.nodeName.toLowerCase()
+        if (name !== 'button') {
+          console.warn(`g-button-group 的子元素应该全是 g-button, 你写的是 div`)
+        }
+      }
+    }
   }
 </script>
 
@@ -16,6 +24,9 @@
   > .g-button {
     border-radius: 0;
     margin-left: -1px;
+    &:not(:first-child) {
+      margin-left: 0;
+    }
     &:first-child {
       border-top-left-radius: var(--border-radius);
       border-bottom-left-radius: var(--border-radius);
